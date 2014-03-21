@@ -1,0 +1,11 @@
+This folder contains the python scripts running on the RPi
+that collect data from the sensors.
+
+Good Logging Practice: www.victorlin.me/posts/2012/08/26/good-logging-practice-in-python
+
+How To Generate PYDOCS:
+
+$ python "/user/lib/python2.7/pydoc.py" <name of the python file you want pydocs for>
+
+
+~                 
