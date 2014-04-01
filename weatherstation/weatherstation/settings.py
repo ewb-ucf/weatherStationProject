@@ -54,6 +54,7 @@ INSTALLED_APPS = (
     'collection_sites',
     'easy_maps',
     'lineage',
+    'flot',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,7 +63,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = 'weatherstation.urls'
@@ -78,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'weather_station',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
+        'PASSWORD': 'ewb-ucf48',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -111,6 +112,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
 
-STATIC_ROOT = '/var/www/weatherstation/static/'
+#STATIC_ROOT = '/var/www/weatherstation/static/'
+
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+STATIC_ROOT = os.path.join(SITE_ROOT, 'static')
+STATIC_URL = '/var/www/weatherstation/static/'
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+
+)
+
+ADMIN_MEDIA_PREFIX = '/static/admin/'

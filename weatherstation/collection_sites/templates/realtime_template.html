@@ -10,57 +10,27 @@
     <script src="{% static "js/bootstrap.js" %}"></script>
 {% endblock %}
 
-{% block background-image %}
-<style>
-    body { background: url("/static/images/dark-blue-sky.jpg");
-            background-size: cover; } 
-    .container { background: ; }
-</style>
-{% endblock %}
-
 {% block top-nav-bar %}
 {% load lineage%}
 <li class="{% ancestor '/realtime/' %}"><a href={% url 'collection_sites.views.realtime_template_display' site.sitename %}><i class="fa fa-dashboard"></i> Realtime Data</a></li>
 <li class="{% ancestor '/pastdata/' %}"><a href={% url 'collection_sites.views.pastdata_template_display' site.sitename %}><i class="fa fa-bar-chart-o"></i> Past Data</a></li>
-<li class="{% ancestor '/toolbox/' %}"><a href={% url 'collection_sites.views.solaranalysis_template_display' site.sitename %}><i class="fa fa-wrench"></i> Toolbox</a></li>
-<li class="dropdown"><a href={% url 'collection_sites.views.solaranalysis_template_display' site.sitename %} class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Analysis <b class="caret"></b></a>
+<li class="dropdown">
+    <a href={% url 'solaranalysis' site.sitename %} class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Analysis <b class="caret"></b></a>
     <ul class="dropdown-menu">
-        <li><a href={% url 'collection_sites.views.solaranalysis_template_display' site.sitename %}>Solar Analysis</a></li>
-        <li><a href={% url 'collection_sites.views.windanalysis_template_display' site.sitename %}>Windspeed Analysis</a></li>
-        <li><a href={% url 'collection_sites.views.otheranalysis_template_display' site.sitename %}>other analysis</a></li>
+        <li><a href={% url 'solaranalysis' site.sitename %}>Power Projects</a></li>
+        <li><a href={% url 'windanalysis' site.sitename %}>Clean Water Projects</a></li>
     </ul>
 </li>
-{% endblock %} 
-
-{% block side-nav-bar %}
-<!-- Collect the nav links, forms, and other content for toggling -->
-<div class="collapse navbar-collapse navbar-ex1-collapse">
-  <ul class="nav navbar-nav side-nav">
-    <li class="active"><a href="index.html"><i class="fa fa-fire"></i> Temperature</a></li>
-    <li><a href="../historical/"><i class="fa fa-arrow-right"></i> Wind Speed and Direction</a></li>
-    <li><a href="blank-page.html"><i class="fa fa-tint"></i> Rainfall</a></li>
-    <li><a href="blank-page.html"><i class="fa fa-sun-o"></i> Solar Radiation</a></li>
-    <li><a href="blank-page.html"><i class="fa fa-dashboard"></i> Air Pressure</a></li>
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Other Data <b class="caret"></b></a>
-      <ul class="dropdown-menu">
-        <li><a href="#">bla</a></li>
-        <li><a href="#">bla</a></li>
-        <li><a href="#">bla</a></li>
-      </ul>
-    </li>
-  </ul>
-</div><!-- /.navbar-collapse -->
 {% endblock %}
+
+{% block side-nav-bar  %}
+{% endblock %} 
 
 <!--Include no map-->
 {% block map %}
 {% endblock %}
 
-{% block extend-page %}
-<div id="page-wrapper">
-    
-
+{% block page-wrapper %}
     <div class="row">
                 <script type='text/javascript'>
                 $(window).load(function(){
@@ -98,7 +68,6 @@
                 </div>
     </div><!-- /.row -->
  
-</div>
 {% endblock %}
 
 {% block extra-javascript %}
