@@ -1,3 +1,55 @@
-{% extends "base_template.html"  %}
+{% extends "pastdata_template.html"  %}
 
 {% block title %}Realtime{% endblock %}
+
+{% block wind-content  %}
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Site Specific Data</h3>
+            </div>
+            <div class="panel-body" style="padding: 10px">
+            <div>
+                <div class="checkbox">
+                  <label>
+                     <input type="checkbox" value="">Metric Units
+                 </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                     <input type="checkbox" value="">Imperial Units
+                 </label>
+                </div>
+
+                <h4><b>P</b>, Power Needed</h4>
+                <input id="ex8" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/>
+                <script type="text/javascript">$("#ex8").slider({ tooltip: 'always' });</script>
+ 
+ 
+                <h4>Sensor Data (<b>v</b>, <b>T</b>)</h4>
+                <div id="range-slider-graph" style="height: 200px; width: 200px;"></div>
+                
+                <h4>Calculations</h4>
+                <math>
+                    H(s) = ∫<sub>0</sub><sup>∞</sup> e<sup>-st</sup> h(t) dt
+                </math> 
+            </div>
+            </div>
+           </div>
+         </div>
+    
+     <div class="col-lg-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Results Summary</h3>
+            </div>
+            <div class="panel-body" style="padding: 10px">
+                <h4>Power vs RPM</h4>
+                <div id="range-slider-graph" style="height: 200px; width: 200px;"></div>
+            </div>
+           </div>
+         </div>
+
+{% endblock  %}

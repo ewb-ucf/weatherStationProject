@@ -24,3 +24,8 @@ register = template.Library()
 def url_tail(value):
     p = re.split('\.com', value)
     return p[-1]
+
+@register.filter(name='')
+def url_tail(value):
+    p = re.split('\.com', value)
+    return p[-1]

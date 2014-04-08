@@ -1,6 +1,5 @@
 {% load static %}
 {% load filters %}
-{% load lineage %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,11 +13,12 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+    <link href="{% static "css/sb-admin.css" %}" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="{% static "css/sb-admin.css" %}" rel="stylesheet">
     <link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" >
-    {% block pre-loaded %}
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+   {% block pre-loaded %}
     {% endblock %}
   </head>
 
@@ -29,12 +29,6 @@
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href={% url 'home' %}>Weather Station Home</a>
           <ul class="nav navbar-nav navbar-right navbar-user">
             {% block top-nav-bar %}
@@ -48,34 +42,52 @@
         {% endblock %}
 	</nav>
 	{% block extend-page %}
-        <div id="page-wrapper"></div>
 	{% endblock %}
     </div>
 
-    {% block map %}
-      {% load easy_maps_tags %}
-      <!-- Default map with 300x400 dimensions -->
-      {% easy_map "Dominican Republic" 1300 400 8%}
-
-      <!-- Variable address, custom detail level and custom template -->
-      {% easy_map address 200 200 5 using 'map.html' %}
-    {% endblock %}
-
     {% block page-wrapper %}
     <div id="page-wrapper">
-      <div class="row">
+
+        {% block map %}
+        {% load easy_maps_tags %}
+        <!-- Default map with 300x400 dimensions -->
+        {% easy_map "Dominican Republic" 1200 400 8%}
+
+        <!-- Variable address, custom detail level and custom template -->
+        {% easy_map address 200 200 5 using 'map.html' %}
+        {% endblock %}
+
+       <div class="row">
+
+        <input type="checkbox" id="toggle" checked/>
+        <label for="toggle">i</label>
+
         <div class="col-lg-12">
           <h1>About</h1>
-          <p>Bla bla missison, goals</p>
-      </div><!-- row -->
+          <p>
+            The Zen of Pythin, by Tim Peters     <br>
+
+            Beautiful is better than ugly.       <br>
+            Explicit is better than implicit.    <br>
+            Simple is better than complex.       <br>
+            Complex is better than complicated.  <br>
+          </p>
+        </div><!-- row -->
     </div><!-- page-wrapper -->
     {% endblock %}
 
-    {% block extra-javascript %}
-     <!-- JavaScript -->
-    <script src="{% static "js/jquery-1.10.2.js" %}"></script>
-    <script src="{% static "js/bootstrap.js" %}"></script>
+    {%block footer %}
+        Copyright &copy {% now 'Y' %} International Project Team <br>
+        University of Central Florida Student Chapter   <br>
+        Engineers Without Borders - USA                 <br>
+        Orlando, FL                                     <br>
     {% endblock %}
-    
+
+    {% block extra-javascript %}
+        <!-- JavaScript -->
+        <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+    {% endblock %}
+
   </body>
 </html>

@@ -55,6 +55,7 @@ INSTALLED_APPS = (
     'easy_maps',
     'lineage',
     'flot',
+    'highcharts',
 )
 
 MIDDLEWARE_CLASSES = (

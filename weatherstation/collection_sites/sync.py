@@ -33,6 +33,23 @@ def getDataObjects(data_type, sitenm):
                     ts = datetime.strptime(line[:pos-1], '%Y_%j_%H_%M_%S')
             
                     sensor_data.append((WeatherData(sitename=sitenm, timestamp=ts, value=line[pos+1:], dataType=data_type)).save())
+    return True
 
-    return sensor_data
+def createJSON(data_type, sitenm):
+    """
+    Create JSON data from data files
+    """
+
+    from django.core import serializers
+    import string
+    
+    XMLSerializer = serializers.get_serializer("xml")
+    xml_serializer = XMLSerializer()
+    fname = string.join([data_type,'_', sitenm]).replace(' ', '')  
+
+    with open(os.path.join('static', fname), 'w+') as out:
+        xml_serializer.serialize(WeatherData.objects.all(), stream=out)
+    
+
+    return True
 

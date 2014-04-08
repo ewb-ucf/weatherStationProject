@@ -16,7 +16,7 @@ for i in WeatherCollectionSystem.objects.all():
 sites_re = '(?:' + '|'.join(location_list) + ')'
 
 urlpatterns = patterns('',
-    
+   
     # Ex. domainName.com/weatherstation
     url(r'^weatherstation/$', 'collection_sites.views.weatherstationhome_template_display', name='home'),
 
