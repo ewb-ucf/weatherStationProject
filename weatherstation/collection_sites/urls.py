@@ -28,10 +28,14 @@ urlpatterns = patterns('',
     url(r'^weatherstation/' + '(?P<siteLocation>' + sites_re + ')/pastdata/$', 'collection_sites.views.pastdata_template_display', name='pastdata'),
 
     # Ex. domainName.com/weatherstation/thailand/solaranalysis
-    url(r'^weatherstation/' + '(?P<siteLocation>' + sites_re + ')/solaranalysis/$', 'collection_sites.views.solaranalysis_template_display', name='solaranalysis'),
+    url(r'^weatherstation/' + '(?P<siteLocation>' + sites_re + ')/poweranalysis/$', 'collection_sites.views.poweranalysis_template_display', name='poweranalysis'),
 
     # Ex. domainName.com/weatherstation/usb/analysis/solar
-    url(r'^weatherstation/' + '(?P<siteLocation>' + sites_re + ')/windanalysis/$', 'collection_sites.views.windanalysis_template_display', name='windanalysis'),
+    url(r'^weatherstation/' + '(?P<siteLocation>' + sites_re + ')/sanitationanalysis/$', 'collection_sites.views.sanitationanalysis_template_display', name='sanitationanalysis'),
+
+    # Ex. domainName.com/weatherstation/usb/analysis/solar
+    url(r'^weatherstation/' + '(?P<siteLocation>' + sites_re + ')/agricultureanalysis/$', 'collection_sites.views.agricultureanalysis_template_display', name='agricultureanalysis'),
+
 
     # Default Admin
     url(r'^admin/', include(admin.site.urls)),

@@ -59,14 +59,7 @@ def pastdata_template_display(request, siteLocation):
     return render_to_response('pastdata_template.html', context)
 
 
-def solaranalysis_template_display(request, siteLocation):
-	wcs = get_object_or_404(WeatherCollectionSystem, sitename=siteLocation)
-	context = {
-		'request': request,
-		'site': wcs}
-	return render_to_response('solaranalysis_template.html', context)
-
-def windanalysis_template_display(request, siteLocation):
+def poweranalysis_template_display(request, siteLocation):
     wcs = get_object_or_404(WeatherCollectionSystem, sitename=siteLocation)
     data = WeatherData.objects.filter(sitename=siteLocation)
     sensor = get_object_or_404(Sensor, dataType=data[0].dataType)
@@ -76,18 +69,28 @@ def windanalysis_template_display(request, siteLocation):
         'site': wcs,
         'data': data,
         }
-    return render_to_response('windanalysis_template.html', context)
+    return render_to_response('poweranalysis_template.html', context)
 
-def otheranalysis_template_display(request, siteLocation):
-	wcs = get_object_or_404(WeatherCollectionSystem, sitename=siteLocation)
-	context = {
-		'request': request,
-		'site': wcs}
-	return render_to_response('windanalysis_template.html', context)
+def sanitationanalysis_template_display(request, siteLocation):
+    wcs = get_object_or_404(WeatherCollectionSystem, sitename=siteLocation)
+    data = WeatherData.objects.filter(sitename=siteLocation)
+    sensor = get_object_or_404(Sensor, dataType=data[0].dataType)
 
-def hydroanalysis_template_display(request, siteLocation):
-	wcs = get_object_or_404(WeatherCollectionSystem, sitename=siteLocation)
-	context = {
-		'request': request,
-		'site': wcs}
-	return render_to_response('hydroanalysis_template.html', context)
+    context = {
+        'request': request,
+        'site': wcs,
+        'data': data,
+        }
+    return render_to_response('sanitationanalysis_template.html', context)
+
+def agricultureanalysis_template_display(request, siteLocation):
+    wcs = get_object_or_404(WeatherCollectionSystem, sitename=siteLocation)
+    data = WeatherData.objects.filter(sitename=siteLocation)
+    sensor = get_object_or_404(Sensor, dataType=data[0].dataType)
+
+    context = {
+        'request': request,
+        'site': wcs,
+        'data': data,
+        }
+    return render_to_response('agriculatureanalysis_template.html', context)

@@ -1,6 +1,17 @@
 {% extends "pastdata_template.html"  %}
 
+{% load staticfiles  %}
+
 {% block title %}Realtime{% endblock %}
+
+{% block pre-loaded %}
+ <script src="{% static "js/vendor/jquery.js" %}"></script>
+  <script src="{% static "js/foundation/foundation.js" %}"></script>
+  <script src="{% static "js/foundation/foundation.slider.js" %}"></script>
+  <script>
+    $(document).foundation();
+  </script>
+{% endblock %}
 
 {% block page-wrapper %}
 <div id="page-wrapper">
@@ -27,10 +38,29 @@
         {% block solar-content %}
         {% endblock %}
       </div>
-      <div class="tab-pane" id="turbine">
 
-        
+
+      <div class="tab-pane" id="turbine">    
       {% block turbine-content%}
+         <div class="col-lg-6">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Results Summary 
+                       <label style="text-align: right"><input type="checkbox"> Metric</label>
+                       <label style="text-align: right"><input type="checkbox"> Imperial</label>
+                    </h3>
+                </div>
+                <div class="panel-body" style="padding: 0px">
+                    <div id="range-slider-graph" style="height: 300px; width: 550px;"></div>
+                    <div class="range-slider" data-slider>
+                      <span class="range-slider-handle"></span>
+                      <span class="range-slider-active-segment"></span>
+                      <input type="hidden">
+                    </div>
+                </div> 
+              </div>
+            </div>
+         </div>
          <div class="col-lg-6">
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -39,21 +69,8 @@
                 <div class="panel-body" style="padding: 10px">
                     <h4>Power vs RPM</h4>
                 <div id="range-slider-graph" style="height: 200px; width: 200px;"></div>
-                </div>
             </div>
          </div>
-        <div class="col-lg-6">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Results Summary</h3>
-                </div>
-                <div class="panel-body" style="padding: 10px">
-                    <h4>Power vs RPM</h4>
-                <div id="range-slider-graph" style="height: 200px; width: 200px;"></div>
-                </div>
-            </div>
-         </div>
- 
         {% endblock %}
 
 
@@ -65,19 +82,3 @@
     </div>
 </div>
 {% endblock %}
-
-
-
-     <div class="col-lg-6">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Results Summary</h3>
-            </div>
-            <div class="panel-body" style="padding: 10px">
-                <h4>Power vs RPM</h4>
-                <div id="range-slider-graph" style="height: 200px; width: 200px;"></div>
-            </div>
-           </div>
-         </div>
-
-{% endblock  %}
