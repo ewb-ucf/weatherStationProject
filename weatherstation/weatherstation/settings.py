@@ -56,6 +56,7 @@ INSTALLED_APPS = (
     'lineage',
     'flot',
     'highcharts',
+    'gmapi',
 )
 
 MIDDLEWARE_CLASSES = (

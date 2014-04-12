@@ -22,6 +22,9 @@ from django.shortcuts import render, render_to_response, get_object_or_404
 from django import forms
 from collection_sites.models import *
 
+from gmapi import maps
+from gmapi.forms.widgets import GoogleMap
+
 location_list = []
 for i in WeatherCollectionSystem.objects.all():
 	if i.sitename not in location_list:
@@ -29,14 +32,26 @@ for i in WeatherCollectionSystem.objects.all():
 
 from highcharts.views import HighChartsBarView
 
+class MapForm(forms.Form):
+    map = forms.Field(widget=GoogleMap(attrs={'width':510, 'height':510}))
+
 def weatherstationhome_template_display(request):
-	#Context tells us what vars we want to be able to access in the template
-	#on the left hand side.
-	context = {
-		'request': request,
-		'location_list': location_list
-				}
-	return render_to_response('weatherstationhome_template.html', context)
+    	#Context tells us what vars we want to be able to access in the template
+    	#on the left hand side.
+        gmap = maps.Map(opts = {
+            'center': maps.LatLng(38, -97),
+            'mapTypeId': maps.MapTypeId.TERRAIN,
+            'zoom': 8,
+            'mapTypeControlOptions': {
+                 'style': maps.MapTypeControlStyle.DROPDOWN_MENU
+            },
+        })
+    	context = {
+    		'request': request,
+    		'location_list': location_list,
+            'form': MapForm(initial={'map': gmap})
+    				}
+    	return render_to_response('weatherstationhome_template.html', context)
 
 def realtime_template_display(request, siteLocation):
 	wcs = get_object_or_404(WeatherCollectionSystem, sitename=siteLocation)

@@ -1,0 +1,22 @@
+Description: 
+    List of To Do items in order of priority for the weather station website
+
+
+--> change file permissions appropriately
+
+------ #1 HOME PAGE--------
+McK --> change map on home page to gmapi with appropriate tooltips and links (will be done by 4/12) 
+Josh --> add style.css
+
+---------------------------
+
+
+----- #2 REALTIME PAGE ----
+McK --> create graphs for each sensor (will be done by 4/12)
+Josh --> add style and .....what other functionality do we want in "realtime"???
+
+----- #3 Toolkit Page ----
+McK --> add a sidebar with the general categories and ewb  7 project types
+McK --> add graph click functionalities and clickables
+
+
