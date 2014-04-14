@@ -65,9 +65,13 @@ def realtime_template_display(request, siteLocation):
 
 
 def pastdata_template_display(request, siteLocation):
-    wcs = get_object_or_404(WeatherCollectionSystem, sitename=siteLocation)
-    data = WeatherData.objects.filter(sitename=siteLocation)
-    sensor = get_object_or_404(Sensor, dataType=data[0].dataType)
+    
+    try:
+        wcs = get_object_or_404(WeatherCollectionSystem, sitename=siteLocation)
+        data = WeatherData.objects.filter(sitename=siteLocation)
+        sensor = get_object_or_404(Sensor, dataType=data[0].dataType)
+    except:
+        return HttpResponse('<h3>The Weather Collection System, Sensor or Data has not been thoroughly initialized</h3>')
 
     context = {
         'request': request,

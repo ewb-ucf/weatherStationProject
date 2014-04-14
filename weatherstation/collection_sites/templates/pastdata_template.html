@@ -39,7 +39,19 @@
                 <h3 class="panel-title"><i class="fa fa-list-alt"></i>{{data.dataType}} Data Summary</h3>
               </div>
               <div class="panel-body">
+                <div class="data-collection-specs">
+                <h3>Collection Intrsument Specs</h3>
+                <ul>
+                    <li>Data Type: {{data.dataType}}</li>
+                    <li>Model Number: {{sensor.modelnumber}}</li>
+                    <li>Collection Rate: {{sensor.data_rate}}</li>
+                    <li>Collection Frequency: {{sensor.collection_freq}}</li>
+                    <li>Read Time: {{sensor.read_time}}</li>
+                    <li>Raw Data Link: {{sensor.dataType}}</li>
+                </ul>
+                </div>
                <table class="table table-bordered table-hover table-striped tablesorter">
+                <h3>Data Summary Table</h3>
                 <thead>
                   <tr>
                     <th>Date <i class="fa fa-sort"></i></th>
@@ -93,17 +105,6 @@
                   </tr>
                 </tbody>
               </table> 
-                <div class="data-collection-specs">
-                <h3>Collection Intrsument Specs</h3>
-                <ul>
-                    <li>Data Type: {{data.dataType}}</li>
-                    <li>Model Number: {{sensor.modelnumber}}</li>
-                    <li>Collection Rate: {{sensor.data_rate}}</li>
-                    <li>Collection Frequency: {{sensor.collection_freq}}</li>
-                    <li>Read Time: {{sensor.read_time}}</li>
-                    <li>Raw Data Link: {{sensor.dataType}}</li>
-                </ul>
-                </div>
                 <div class="text-right"><a href="#">Printable View <i class="fa fa-arrow-circle-right"></i></a></div>
                 <div class="text-right"><a href="#">Raw Data<i class="fa fa-arrow-circle-right"></i></a></div>
               </div>

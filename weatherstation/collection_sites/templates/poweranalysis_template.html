@@ -24,15 +24,48 @@
     <script>
     $(document).foundation();
     </script>
-    <link href="{% static "css/style.css" %}" rel="stylesheet" />
 {% endblock %}
+
+    {% block side-nav-bar%}
+        <ul class="nav navbar-nav side-nav">
+        <li class="dropdown">
+          <a href="#"><i class="fa fa-caret-square-o-down"></i> Power Generation <b class="caret"></b></a>
+          <ul>
+            <li><a href="#">Turbine Power</a></li>
+            <li><a href="#">Photovoltaic Power</a></li>
+            <li><a href="#">Biomass Power</a></li>
+            <li><a href="#">Hydrogen Power</a></li>
+            <li><a href="#">Thermal Power</a></li>
+            <li><a href="#">Other Power</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#"><i class="fa fa-caret-square-o-down"></i> Power Transmition <b class="caret"></b></a>
+          <ul>
+            <li><a href="#">Electrical Power</a></li>
+            <li><a href="#">Mechanical Power</a></li>
+            <li><a href="#">Chemical Power</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#"><i class="fa fa-caret-square-o-down"></i> Power Storage <b class="caret"></b></a>
+          <ul>
+            <li><a href="#">Chemical Storage</a></li>
+            <li><a href="#">Mechanical Storage</a></li>
+            <li><a href="#">Thermal Storage</a></li>
+            <li><a href="#">Other Storage</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    {% endblock %}
 
 {% block page-wrapper %}
 <div id="page-wrapper">
 
      <div class="row">
         <div class="col-lg-12">
-            <h1>{{site.sitename}}</h1>
+            <h1>{{site.sitename|capfirst}}</h1>
             <ol class="breadcrumb">
               <li><a href="index.html"><i class="fa fa-dashboard"></i> Updated: {% now "jS F Y H:i" %}</a></li>
             </ol>

@@ -3,6 +3,8 @@ Description:
 
 
 --> change file permissions appropriately
+--> McK: customize django admin site
+        -add wcs registration so they can add the station and start collecting data
 
 ------ #1 HOME PAGE--------
 Josh --> add style.css, github/opensource links, pics slideshow, etc

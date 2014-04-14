@@ -1,122 +1,145 @@
-$(function() {
+/* Links to JSON Data */
+tempData = 'http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?';
 
-    $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function(data) {
+rangeSel = {
+                selected: 0,
+                enabled: false,
+                inputEnabled: false,
+            };
+
+function renderWindSpeedGraph(JSON_link) {
+
+    $.getJSON(JSON_link, function(data) {
         // Create the chart
         window.chart = new Highcharts.StockChart({
             chart: {
                 renderTo: 'wind-speed-graph'
             },
-
-            rangeSelector: {
-                selected: 1,
-                buttons: [{
-                    type: 'day',
-                    count: 1,
-                    text: '1d'
-                }, {
-                    type: 'month',
-                    count: 1,
-                    text: '1m'
-                }, {
-                    type: 'year',
-                    count: 1,
-                    text: '1y'
-                }],
-                inputDateFormat: '%Y.%m.%d %H:%M',
-                inputBoxWidth: 150,
+            
+            navigator: {
+                enabled: true
             },
 
             title: {
-                text: 'Wind Speed Over Time'
+                text: 'Windspeed Over Time'
+            },
+            
+            legend: {
+                layout: 'vertical',
+                backgroundColor: '#FFFFFF',
+                floating: true,
+                align: 'left',
+                verticalAlign: 'top',
+                x: 90,
+                y: 45,
+                labelFormatter: function() {
+                    return this.name +' (click to hide)';
+                }
+             },
+            
+            rangeSelector: {
+                selected: 0,
+                enabled: true,
+                inputDateFormat: '%Y-%m',
+                inputEnabled: false,
+                buttons: [{
+                    type: 'all',
+                    text: 'Daily',
+                }, {
+                    type: 'month',
+                    text: 'Monthly'
+                }, {
+                    type: 'year',
+                    text: 'Yearly',
+                }],
+                buttonTheme: { // styles for the buttons
+                width: null             
+                }
             },
 
             series: [{
-                name: 'Wind Speed',
+                name: 'High',
                 data: data,
+                color: 'red',
+                tooltip: {
+                    valueDecimals: 2
+                }}, {
+                name: 'Average',
+                data: data,
+                color: 'green',
+                tooltip: {
+                    valueDecimals: 2
+                }}, {
+                name: 'Low',
+                data: data,
+                color: 'blue',
                 tooltip: {
                     valueDecimals: 2
                 }}]
-
-        }, function(chart) {
-
-            // apply the date pickers
-            setTimeout(function() {
-                $('input.highcharts-range-selector', $('#' + chart.options.chart.renderTo)).datepicker()
-            }, 0)
         });
-    });
+    });         
+}
 
-    $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function(data) {
+function renderTemperatureGraph(JSON_link) {
+
+    $.getJSON(JSON_link, function(data) {
         // Create the chart
         window.chart = new Highcharts.StockChart({
             chart: {
                 renderTo: 'temperature-graph'
             },
 
-            rangeSelector: {
-                selected: 1,
-                buttons: [{
-                    type: 'day',
-                    count: 1,
-                    text: '1d'
-                }, {
-                    type: 'month',
-                    count: 1,
-                    text: '1m'
-                }, {
-                    type: 'year',
-                    count: 1,
-                    text: '1y'
-                }],
-                inputDateFormat: '%Y.%m.%d %H:%M',
-                inputBoxWidth: 150,
-            },
+            rangeSelector: rangeSel,
 
             title: {
                 text: 'Temperature Over Time'
             },
+            
+            navigator: {
+                enabled: true
+            },
 
             series: [{
                 name: 'Temperature',
+                id: 'temp_x_axis',
+                xAxis: 0,
                 data: data,
                 tooltip: {
                     valueDecimals: 2
+                }}],
+            series: [{
+                name: 'High',
+                data: data,
+                color: 'red',
+                tooltip: {
+                    valueDecimals: 2
+                }}, {
+                name: 'Average',
+                data: data,
+                color: 'green',
+                tooltip: {
+                    valueDecimals: 2
+                }}, {
+                name: 'Low',
+                data: data,
+                color: 'blue',
+                tooltip: {
+                    valueDecimals: 2
                 }}]
-
-        }, function(chart) {
-
-            // apply the date pickers
-            setTimeout(function() {
-                $('input.highcharts-range-selector', $('#' + chart.options.chart.renderTo)).datepicker()
-            }, 0)
         });
-    });
+    });         
+}
 
-    $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function(data) {
+function renderDensityGraph(JSON_link) {
+
+    $.getJSON(JSON_link, function(data) {
         // Create the chart
         window.chart = new Highcharts.StockChart({
             chart: {
-                renderTo: 'density-graph'
+                renderTo: 'density'
             },
 
-            rangeSelector: {
-                selected: 1,
-                buttons: [{
-                    type: 'day',
-                    count: 1,
-                    text: '1d'
-                }, {
-                    type: 'month',
-                    count: 1,
-                    text: '1m'
-                }, {
-                    type: 'year',
-                    count: 1,
-                    text: '1y'
-                }],
-                inputDateFormat: '%Y.%m.%d %H:%M',
-                inputBoxWidth: 150,
-            },
+            rangeSelector: rangeSel,
 
             title: {
                 text: 'Density Over Time'
@@ -127,27 +150,34 @@ $(function() {
                 data: data,
                 tooltip: {
                     valueDecimals: 2
+                }}],
+            series: [{
+                name: 'High',
+                data: data,
+                color: 'red',
+                tooltip: {
+                    valueDecimals: 2
+                }}, {
+                name: 'Average',
+                data: data,
+                color: 'green',
+                tooltip: {
+                    valueDecimals: 2
+                }}, {
+                name: 'Low',
+                data: data,
+                color: 'blue',
+                tooltip: {
+                    valueDecimals: 2
                 }}]
-
-        }, function(chart) {
-
-            // apply the date pickers
-            setTimeout(function() {
-                $('input.highcharts-range-selector', $('#' + chart.options.chart.renderTo)).datepicker()
-            }, 0)
         });
-    });
+    });         
+}
 
 
-
-    // Set the datepicker's date format
-    $.datepicker.setDefaults({
-        dateFormat: 'yy-mm-dd',
-        onSelect: function(dateText) {
-            this.onchange();
-            this.onblur();
-        }
-    });
-
-});
+/*
+renderWindSpeedGraph(tempData);
+renderTemperatureGraph(tempData);
+renderDensityGraph(tempData);
+*/
 
