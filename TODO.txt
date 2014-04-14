@@ -5,8 +5,7 @@ Description:
 --> change file permissions appropriately
 
 ------ #1 HOME PAGE--------
-McK --> change map on home page to gmapi with appropriate tooltips and links (will be done by 4/12) 
-Josh --> add style.css
+Josh --> add style.css, github/opensource links, pics slideshow, etc
 
 ---------------------------
 
