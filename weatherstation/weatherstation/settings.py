@@ -50,13 +50,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
+    'django.contrib.sites',
     'south',
     'collection_sites',
-    'easy_maps',
-    'lineage',
     'flot',
     'highcharts',
-    'gmapi',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,22 +79,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'weather_station',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
         'PASSWORD': 'ewb-ucf48',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
-
-
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-"""
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/

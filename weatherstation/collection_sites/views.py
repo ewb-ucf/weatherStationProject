@@ -38,6 +38,8 @@ class MapForm(forms.Form):
 def weatherstationhome_template_display(request):
     	#Context tells us what vars we want to be able to access in the template
     	#on the left hand side.
+        wcs_list = WeatherCollectionSystem.objects.all()
+       
         gmap = maps.Map(opts = {
             'center': maps.LatLng(38, -97),
             'mapTypeId': maps.MapTypeId.TERRAIN,
@@ -48,6 +50,7 @@ def weatherstationhome_template_display(request):
         })
     	context = {
     		'request': request,
+            'wcs_list': wcs_list,
     		'location_list': location_list,
             'form': MapForm(initial={'map': gmap})
     				}

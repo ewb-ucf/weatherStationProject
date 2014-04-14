@@ -38,7 +38,9 @@ class WeatherCollectionSystem(models.Model):
     """
     Creates weather station site object
     """
-    location = models.FloatField(null=True)
+    longitude = models.FloatField(null=True) 
+    latitude = models.FloatField(null=True)
+    altitude = models.FloatField(null=True)
     sitename = models.CharField(max_length=200)
     data = models.ForeignKey(WeatherData, null=True)
     about = models.CharField(max_length=500, null=True, blank=True)
