@@ -203,4 +203,36 @@ rlNo command 'clea' found, did you mean:
  Command 'clear' from package 'ncurses-bin' (main)
  Command 'clex' from package 'clex' (universe)
 clea: command not found
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A
+]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ rls
+No command 'rls' found, but there are 18 similar ones
+rls: command not found
+]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ clear
+[H[2J]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ ls
+[0m[01;34mdata[0m  [01;34mscripts[0m  tempfile.txt  temporary.txt  [01;34mtest_data[0m  TODO.txt  typescript  [01;34mweatherstation[0m
+]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ cd data/
+]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProject/dataadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject/data$ ls
+[0m[01;34mphotoresistor[0m  [01;34mpressure[0m  [01;34mrain[0m  [01;34mtemperature[0m  [01;34mwind[0m
+]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProject/dataadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject/data$ cd ../
+]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ ls
+[0m[01;34mdata[0m  [01;34mscripts[0m  tempfile.txt  temporary.txt  [01;34mtest_data[0m  TODO.txt  typescript  [01;34mweatherstation[0m
+]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo git add *[K
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo git add data/photoresistor/
+]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo git add data/photoresistor/[Kls[Kcd ../[4Plscd data/ls[Kclear[2Prlsclea[1Pls [25@sudo git push origin master[Ccommit -am "mckinnley making updates"
+[master 7b04cbd] mckinnley making updates
+ 1 file changed, 37 insertions(+), 1 deletion(-)
+]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo git commit -am "mckinnley making updates"[14Padd data/photoresistor/[Kls[Kcd ../[4Plscd data/ls[Kclear[2Prlsclea[1Pls [25@sudo git push origin master[C
+Username for 'https://github.com': ewb-ucf
+Password for 'https://ewb-ucf@github.com': 
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 982 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To https://github.com/ewb-ucf/weatherStationProject.git
+   1c5758f..7b04cbd  master -> master
+]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ ls
+[0m[01;34mdata[0m  [01;34mscripts[0m  tempfile.txt  temporary.txt  [01;34mtest_data[0m  TODO.txt  typescript  [01;34mweatherstation[0m
+]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ clear
+[H[2
