@@ -3,6 +3,8 @@
                  process
 """
 
+__author__="Sebastien Bennoit"
+
 import settings,datetime,time,os
 from Adafruit_BMP085 import BMP085
 
@@ -50,7 +52,8 @@ def collect_to_file():
 
 def main():
     """
-    
+    Start running data collection program   
+
     """
 
     #Collect data every 'freq' for 'period'
