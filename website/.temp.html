@@ -1,0 +1,124 @@
+{% extends "realtime_template.html"  %}
+{% load static %}
+{% load flot_tags %}
+
+{% block title %}Past Data{% endblock %}
+
+{% block pre-loaded %}
+<!--Move this so it only loads in realtime template-->
+     <!-- JavaScript -->
+    <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+    <script src="{% static "js/flot/jquery.flot.js" %}"></script>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+    <script src="http://code.highcharts.com/stock/highstock.js"></script>
+    <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+ 
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="{% static "js/rangeSlider.js" %}"></script>
+{% endblock %}
+
+{% block temperature-content  %}
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i>{{data.dataType }} Data Over Time</h3>
+              </div>
+                <div class="panel-body" style="padding: 10px">
+                    <div id="range-slider-graph" ></div>
+                    <div class="text-right"><a href="#">Analyze Data <i class="fa fa-arrow-circle-right"></i></a></div>
+                </div>
+              </div>
+            </div>
+
+          <div class="col-lg-5">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-list-alt"></i>{{data.dataType}} Data Summary</h3>
+              </div>
+              <div class="panel-body">
+               <table class="table table-bordered table-hover table-striped tablesorter">
+                <thead>
+                  <tr>
+                    <th>Date <i class="fa fa-sort"></i></th>
+                    <th>Average <i class="fa fa-sort"></i></th>
+                    <th>High <i class="fa fa-sort"></i></th>
+                    <th>Low <i class="fa fa-sort"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="active">
+                    <td>Jan '12</td>
+                    <td>23</td>
+                    <td>34</td>
+                    <td>98</td>
+                  </tr>
+                  <tr class="success">
+                    <td>Feb '12</td>
+                    <td>261</td>
+                    <td>33</td>
+                    <td>234</td>
+                  </tr>
+                  <tr>
+                    <td>March '12</td>
+                    <td>665</td>
+                    <td>21</td>
+                    <td>16</td>
+                  </tr>
+                  <tr class="danger">
+                    <td>April '12</td>
+                    <td>39023</td>
+                    <td>43</td>
+                    <td>143</td>
+                  </tr>
+                  <tr>
+                    <td>May '12</td>
+                    <td>23</td>
+                    <td>34</td>
+                    <td>32</td>
+                  </tr>
+                  <tr>
+                    <td>June '12</td>
+                    <td>421</td>
+                    <td>60</td>
+                    <td>232</td>
+                  </tr>
+                  <tr>
+                    <td>July '12</td>
+                    <td>1233</td>
+                    <td>93</td>
+                    <td>2634</td>
+                  </tr>
+                </tbody>
+              </table> 
+                <div class="data-collection-specs">
+                <h3>Collection Intrsument Specs</h3>
+                <ul>
+                    <li>Data Type: {{data.dataType}}</li>
+                    <li>Model Number: {{sensor.modelnumber}}</li>
+                    <li>Collection Rate: {{sensor.data_rate}}</li>
+                    <li>Collection Frequency: {{sensor.collection_freq}}</li>
+                    <li>Read Time: {{sensor.read_time}}</li>
+                    <li>Raw Data Link: {{sensor.dataType}}</li>
+                </ul>
+                </div>
+                <div class="text-right"><a href="#">Printable View <i class="fa fa-arrow-circle-right"></i></a></div>
+                <div class="text-right"><a href="#">Raw Data<i class="fa fa-arrow-circle-right"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+{% endblock  %}
+
+{% block extra-javascript %}
+<!-- JavaScript -->
+    <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+
+    <!-- Page Specific Plugins -->
+    <script src="{% static "js/tablesorter/jquery.tablesorter.js" %}"></script>
+    <script src="{% static "js/tablesorter/tables.js" %}"></script>
+{% endblock %}

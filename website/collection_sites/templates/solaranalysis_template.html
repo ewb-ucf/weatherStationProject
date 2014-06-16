@@ -1,0 +1,25 @@
+{% extends "base_template.html"  %}
+
+{% block title %}Realtime{% endblock %}
+
+{% block side-nav-bar %}
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav side-nav">
+    <li class="active"><a href="index.html"><i class="fa fa-fire"></i> Temperature</a></li>
+    <li><a href="../historical/"><i class="fa fa-arrow-right"></i> Wind Speed and Direction</a></li>
+    <li><a href="blank-page.html"><i class="fa fa-tint"></i> Rainfall</a></li>
+    <li><a href="blank-page.html"><i class="fa fa-sun-o"></i> Solar Radiation</a></li>
+    <li><a href="blank-page.html"><i class="fa fa-dashboard"></i> Air Pressure</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Other Data <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#">bla</a></li>
+        <li><a href="#">bla</a></li>
+        <li><a href="#">bla</a></li>
+      </ul>
+    </li>
+  </ul>
+</div><!-- /.navbar-collapse -->
+{% endblock %}
+

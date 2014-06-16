@@ -1,0 +1,83 @@
+{% load static %}
+{% load filters %}
+{% load lineage %}
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}Weather Station{% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="{% static "css/sb-admin.css" %}" rel="stylesheet">
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+    <link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" >
+    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+    {% block pre-loaded %}
+    {% endblock %}
+  </head>
+
+  <body>
+    {% block background-image %}
+    {% endblock %}
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href={% url 'collection_sites.views.weatherstationhome_template_display' %}>Weather Station Home</a>
+          <ul class="nav navbar-nav navbar-right navbar-user">
+            {% block top-nav-bar %}
+            {% for site in location_list %}
+              <li><a href={% url 'collection_sites.views.realtime_template_display' site %}><i class="fa fa-flag"></i> {{site}}</a></li>
+            {% endfor %}
+            {% endblock %}
+          </ul>          
+        </div>
+        {% block side-nav-bar %}
+        {% endblock %}          
+      </nav>
+      {% block extend-page%}
+      {% endblock %}
+    </div>
+
+    {% block map %}
+      {% load easy_maps_tags %}
+      <!-- Default map with 300x400 dimensions -->
+      {% easy_map "Dominican Republic" 1300 400 8%}
+
+      <!-- Variable address, custom detail level and custom template -->
+      {% easy_map address 200 200 5 using 'map.html' %}
+    {% endblock %}
+
+    {% block page-wrapper %}
+    <div id="page-wrapper">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>About</h1>
+          <p>Bla bla missison, goals</p>
+      </div><!-- row -->
+    </div><!-- page-wrapper -->
+    {% endblock %}
+
+    {% block extra-javascript %}
+     <!-- JavaScript -->
+    <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+    {% endblock %}
+    
+  </body>
+</html>
