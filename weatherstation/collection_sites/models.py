@@ -2,8 +2,12 @@
 The models descirbed here are used in the views file
 to render data to an html page through a template.
 
-This creates two tables in MySQL with all the parameters
+This creates three tables in MySQL with all the parameters
 as described here
+
+dataType is the title of the data file.
+
+sitename is the name of the parent folder (i.e. dominican_republic)
 
 """
 
@@ -38,9 +42,12 @@ class WeatherCollectionSystem(models.Model):
     """
     Creates weather station site object
     """
-    longitude = models.FloatField(null=True) 
-    latitude = models.FloatField(null=True)
-    altitude = models.FloatField(null=True)
+    #longitude = models.FloatField(null=True) 
+    #latitude = models.FloatField(null=True)
+    #altitude = models.FloatField(null=True)
     sitename = models.CharField(max_length=200)
     data = models.ForeignKey(WeatherData, null=True)
     about = models.CharField(max_length=500, null=True, blank=True)
+
+    def wasPublishedRecently(self):
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
