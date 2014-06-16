@@ -1,10 +1,14 @@
 --------------------------------------
 
-Description: 
+Description: Contains scripts present on py to collect sensor data
 
-Authors: 
+Authors: Sebastien Bennoit
+         Tyler Petresky
+         McKinnley Workman
 
-Last Modified:
+Last Modified: 6/16/2014
+
+Version: n0.1.0a
 
 File Structure:
 
@@ -16,9 +20,17 @@ File Structure:
     the near future
 
     miniruns/
+    Contains the individual run files for each of the sensors. 
+    The individual run files run as background scripts and collect data
+    at the period and frequency specified in the "lib/settings.py" file
+
+    run.py
+    This script is the control script that is executed when the RPi boots. It
+    initializes all the sensors that are connected and in the settings file and
+    runs tests to verify them. Then it starts all the individual processes for
+    each sensor program (Eg. run_SENSORNAME_sensor.py)
 
 --------------------------------------
-
 
 Good Logging Practice: www.victorlin.me/posts/2012/08/26/good-logging-practice-in-python
 
