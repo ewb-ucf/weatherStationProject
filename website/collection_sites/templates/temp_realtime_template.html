@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http - equiv = "content-type"content = "text/html; charset=UTF-8">
+<title> Thermometer Example </title>
+
+    <script src="../static/js/jquery-1.10.2.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.5.2.js'></script>
+  <script type='text/javascript' src="../static/js/thermometer.js"></script>
+  <script type='text/javascript' src="../static/js/jquery.thermometer.js"></script>
+
+<script type='text/javascript'>
+$(window).load(function(){
+//Sample to create a thermometer
+var _ = {
+    bulbRadius: 10
+}
+$(function() {
+    //ctx = $('#demo')[0].getContext('2d');
+    var w = $('#demo').width();
+    var h = $('#demo').height();
+
+    $('#demo').thermometer({
+        w: w,
+        h: h,
+        color: {
+            label: 'rgba(255, 255, 255, 1)',
+            tickLabel: 'rgba(255, 0, 0, 0.4)'
+        },
+        centerTicks: false,
+        majorTicks: 10,
+        minorTicks: 5,
+        max: 100,
+        min:0,
+        scaleTickLabelText: 1.15,
+        scaleLabelText: 0.9,
+        scaleTickWidth: 1.5,
+        unitsLabel: "C"
+    });
+
+
+    //g.drawThermometerContainer();
+    //_.ctx = ctx;
+    //_.w = w;
+    //_.h = h;
+    $('#demo').thermometer('setValue',$('#fillTo').val());
+    //g.redrawFill();
+    $('#fillToButton').click(function() {
+        //g.clearCanvas();
+        //g.drawThermometerContainer();
+        $('#demo').thermometer('setValue',$('#fillTo').val());
+        //g.redrawFill();
+    });
+    $('#fillTo').change(function() {
+        //g.clearCanvas();
+        //g.drawThermometerContainer();
+        $('#demo').thermometer('setValue',$('#fillTo').val());
+        //g.redrawFill();
+    });
+
+});
+
+function test() {
+    console.log("demo");
+    alert("test");
+}
+});//]]>  
+
+</script>
+
+
+</head>
+<body>
+
+<div>
+    <canvas id="demo" height="450" width="400"></canvas><div style="clear:both"></div>
+    <input id="fillTo" value="55.69" /><button id ='fillToButton'>Redraw Gauge</button>
+</div>
+
+</body>
+
+
+</html>
+

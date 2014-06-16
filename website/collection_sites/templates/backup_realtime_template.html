@@ -1,0 +1,143 @@
+{% extends "weatherstationhome_template.html"  %}
+{% load static %}
+
+{% block title %}Realtime{% endblock %}
+
+{% block pre-loaded-js %}
+<!--Move this so it only loads in realtime template-->
+    <script src="http://code.jquery.com/jquery-1.5.2.js"></script>
+    <script src="{% static "js/thermometer.js" %}"></script>
+    <script src="{% static "js/jquery.thermometer.js" %}"></script>
+{% endblock %}
+
+
+<!--
+{% block background-image %}
+<style>
+	body { background: url("/static/images/blue-sky.jpg"); } 
+	.container { background: ; }
+</style>
+{% endblock %}
+-->
+
+{% block top-nav-bar %}
+{% load lineage%}
+<li class="{% ancestor '/realtime/' %}"><a href={% url 'collection_sites.views.realtime_template_display' site.sitename %}><i class="fa fa-dashboard"></i> Realtime Data</a></li>
+<li class="{% ancestor '/pastdata/' %}"><a href={% url 'collection_sites.views.pastdata_template_display' site.sitename %}><i class="fa fa-bar-chart-o"></i> Past Data</a></li>
+<li class="{% ancestor '/toolbox/' %}"><a href={% url 'collection_sites.views.solaranalysis_template_display' site.sitename %}><i class="fa fa-wrench"></i> Toolbox</a></li>
+<li class="dropdown"><a href={% url 'collection_sites.views.solaranalysis_template_display' site.sitename %} class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Analysis <b class="caret"></b></a>
+	<ul class="dropdown-menu">
+		<li><a href={% url 'collection_sites.views.solaranalysis_template_display' site.sitename %}>Solar Analysis</a></li>
+		<li><a href={% url 'collection_sites.views.windanalysis_template_display' site.sitename %}>Windspeed Analysis</a></li>
+		<li><a href={% url 'collection_sites.views.otheranalysis_template_display' site.sitename %}>other analysis</a></li>
+	</ul>
+</li>
+{% endblock %} 
+
+{% block side-nav-bar %}
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav side-nav">
+    <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i> Temperature</a></li>
+    <li><a href="../historical/"><i class="fa fa-bar-chart-o"></i> Wind Speed and Direction</a></li>
+    <li><a href="blank-page.html"><i class="fa fa-wrench"></i> Rainfall</a></li>
+    <li><a href="blank-page.html"><i class="fa fa-sun-o"></i> Solar Radiation</a></li>
+    <li><a href="blank-page.html"><i class="fa fa-wrench"></i> Air Pressure</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> Other Data <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#">bla</a></li>
+        <li><a href="#">bla</a></li>
+        <li><a href="#">bla</a></li>
+      </ul>
+    </li>
+  </ul>
+</div><!-- /.navbar-collapse -->
+{% endblock %}
+
+<!--Include no map-->
+{% block map %}
+{% endblock %}
+
+{% block extend-page %}
+<div id="page-wrapper">
+	<div class="row">
+	      <div class="col-lg-12">
+	        <h1>{{site.sitename}}</h1>
+	        <ol class="breadcrumb">
+	          <li><a href="index.html"><i class="fa fa-clock-o"></i> Updated: {% now "jS F Y H:i" %}</a></li>
+	        </ol>
+	        <div class="alert alert-info alert-dismissable">
+	          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	          This page shows data gathered from bla bla bla
+	      </div>
+	    </div>
+	</div><!-- /.row -->
+
+<script type='text/javascript'>//<![CDATA[ 
+	$(window).load(function(){
+	//Sample to create a thermometer
+	//var _ = {
+	//    bulbRadius: 20
+	//}
+	$(function() {
+	    //ctx = $('#demo')[0].getContext('2d');
+	    var w = $('#demo').width();
+	    var h = $('#demo').height();
+
+	    $('#demo').thermometer({
+	        w: w,
+	        h: h,
+	        color: {
+	            label: 'rgba(255, 255, 255, 1)',
+	            tickLabel: 'rgba(255, 0, 0, 0.4)'
+	        },
+	        centerTicks: false,
+	        majorTicks: 3,
+	        minorTicks: 4,
+	        max: 100,
+	        min:25,
+	        scaleTickLabelText: 1.15,
+	        scaleLabelText: 0.9,
+	        scaleTickWidth: 1.5,
+	        unitsLabel: " lbs"
+	    });
+
+
+	    //g.drawThermometerContainer();
+	    //_.ctx = ctx;
+	    //_.w = w;
+	    //_.h = h;
+	    $('#demo').thermometer('setValue',$('#fillTo').val());
+	    //g.redrawFill();
+	    $('#fillToButton').click(function() {
+	        //g.clearCanvas();
+	        //g.drawThermometerContainer();
+	        $('#demo').thermometer('setValue',$('#fillTo').val());
+	        //g.redrawFill();
+	    });
+	    $('#fillTo').change(function() {
+	        //g.clearCanvas();
+	        //g.drawThermometerContainer();
+	        $('#demo').thermometer('setValue',$('#fillTo').val());
+	        //g.redrawFill();
+	    });
+
+	});
+
+	function test() {
+	    console.log("demo");
+	    alert("test");
+	}
+	});//]]>  
+
+</script>
+
+	<div class="row">
+		<canvas id="demo" height="350" width="400"></canvas><div style="clear:both"></div>
+		<input id="fillTo" value="55.69" /><button id ='fillToButton'>Redraw Gauge</button>
+	</div>
+	</div>
+	
+</div>
+{% endblock %}
