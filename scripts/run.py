@@ -102,60 +102,6 @@ def test_GPS_module():
     pass
 
 #------------------------------------------------------------------------------
-#-----------------------Collection-Chapter-------------------------------------
-#------------------------------------------------------------------------------
-'
-def collect_data():
-    collect_pressure_data()
-    collect_temperature_data()
-    collect_solar_radiation_data()
-    collect_rain_data()
-    collect_wind_data()
-    collect_GPS_data()
-    pass
-
-def collect_pressure_data(hPaC):
-    """
-    collect the data at a predifined frequencyand period.it then saves to its
-    assigned folder.(see settings file for modifications.)
-    """
-    pressure = hPaC.readPressure()
-    print "The current Atmospheric Pressure is: %.2f hpa" % (pressure/ 100)
-    
-   
-def collect_temperature_data(hPaC):
-    """
-    see above for description, pero cambiar el nombre.
-    """
-    temp = hPaC.readTemperature()
-    print "The current local Temperature is : %.2f C" % temp
-    
-
-def collect_solar_radiation_data():
-    """
-    bis
-    """
-    pass
-
-def collect_rain_data():
-    """
-    bis
-    """
-    pass
-    
-def collect_wind_data():
-    """
-    bis
-    """
-    pass    
-
-def collect_GPS_data():
-    """
-    bis
-    """
-    pass
-'
-#------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 
@@ -167,8 +113,6 @@ def main():
     
     b = initialize_pressure_temperature_sensor()
     test_pressure_temperature_sensor(b)
-    collect_pressure_data(b)
-    collect_temperature_data(b)
     # start_collection()
     print "Got thru main" 
 
