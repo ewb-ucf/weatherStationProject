@@ -8,7 +8,12 @@
 
 import Sensor, settings
 import logging, os, datetime, time
-import RPi.GPIO as GPIO 
+import RPi.GPIO as GPIO
+
+from sql import *
+from sql.aggregate import *
+from sql.conditionals import *
+
 
 def activateAllSensors():
     """
@@ -60,8 +65,22 @@ def collect(sensor):
 
     while ( (datetime.datetime.utcnow() - start) < datetime.timedelta(seconds=(float(sensor.read_time))) ):
         s.append(os.path.join(time.strftime("%Y_%j_%H_%M_%S_"), str(GPIO.input(int(sensor.input_pin)))))
+        ParseSensorData(s)
 
     with open(os.path.join(sensor.write_file, time.strftime("%Y_%j_%H_%M_%S_")), 'w+') as file:
         file.writelines("%s\n" % item for item in s)
 
     sensor.lastCollectionTime = time.time()
+
+def ParseSensorData(data_string):
+    data_list = data_string.split('_', 5)
+
+    slash_pos = data_string.find('/')
+    data_value = data_string[slash_pos + 1:]
+
+    data_list.append(data_value)
+
+    LogData(data_list)
+
+def LogData(data_list):
+    sql
