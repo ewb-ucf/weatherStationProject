@@ -1,238 +1,0 @@
-Script started on Sat 24 May 2014 03:33:13 PM EDT
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo reboot nows[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kscript
-script        scriptreplay  
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ scriptcscriptdscript[C[C[C[C[C[C [K[K[K[K[K[K[K scripts/
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProject/scriptsadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject/scripts$ ls
-manage.py  manage.pyc  README  Sensor.py  Sensor.pyc  settings.py  settings.pyc
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProject/scriptsadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject/scripts$ cd ../
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ ls
-[0m[01;34mdata[0m  [01;34mscripts[0m  [01;34mtest_data[0m  TODO.txt  typescript  [01;34mweatherstation[0m
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ cd weatherstation/[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kadd[K[K[Ksudo add *
-[sudo] password for admin48: 
-sudo: add: command not found
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo add *[Kall
-sudo: add: command not found
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo add all[C[C[C[C[C[C[1@g[1@i[1@t[1@ 
-fatal: pathspec 'all' did not match any files
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo git add all[K[K[K*
-warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like 'data/Photo-Resistor_data/Intensity_received.txt' that are
-removed from your working tree are ignored with this version of Git.
-
-* 'git add --ignore-removal <pathspec>', which is the current default,
-  ignores paths you removed from your working tree.
-
-* 'git add --all <pathspec>' will let you also record the removals.
-
-Run 'git status' to check the paths you removed from your working tree.
-
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo git push [K[K[K[K[Kcom [Km i[K[Kit -am "updates from m[K[K[K[K[K[K[K[K[K[K[K[K[K[Kmckupadtae[K[K[K[K[Kdate"
-[master 2b721c8] mckupdate
- 94 files changed, 181401 deletions(-)
- delete mode 100644 data/Photo-Resistor_data/Intensity_received.txt
- delete mode 100644 data/Temperature-data/data collected
- delete mode 100644 data/pressure/1395370525.84
- delete mode 100644 data/pressure/1395370557.77
- delete mode 100644 data/pressure/1395370869.92
- delete mode 100644 data/pressure/1395370980.01
- delete mode 100644 data/pressure/1395371022.04
- delete mode 100644 data/pressure/2014_080_04_21_57_
- delete mode 100644 data/pressure/2014_080_04_21_58_
- delete mode 100644 data/pressure/2014_080_04_21_59_
- delete mode 100644 data/pressure/2014_080_04_22_00_
- delete mode 100644 data/pressure/2014_080_04_22_01_
- delete mode 100644 data/pressure/2014_080_04_22_02_
- delete mode 100644 data/pressure/2014_080_04_22_03_
- delete mode 100644 data/pressure/2014_080_04_22_04_
- delete mode 100644 data/pressure/2014_080_04_22_05_
- delete mode 100644 data/pressure/2014_080_04_22_06_
- delete mode 100644 data/pressure/2014_080_04_22_07_
- delete mode 100644 data/pressure/2014_080_04_22_08_
- delete mode 100644 data/pressure/2014_080_04_22_09_
- delete mode 100644 data/pressure/2014_080_04_22_10_
- delete mode 100644 data/pressure/2014_080_04_22_11_
- delete mode 100644 data/pressure/2014_080_04_22_12_
- delete mode 100644 data/pressure/2014_080_04_22_13_
- delete mode 100644 data/pressure/2014_080_04_22_14_
- delete mode 100644 data/pressure/2014_080_04_22_15_
- delete mode 100644 data/pressure/2014_080_04_22_16_
- delete mode 100644 data/pressure/2014_080_04_22_17_
- delete mode 100644 data/pressure/2014_080_04_22_18_
- delete mode 100644 data/pressure/2014_080_04_22_19_
- delete mode 100644 data/pressure/2014_080_04_22_20_
- delete mode 100644 data/pressure/2014_080_04_22_21_
- delete mode 100644 data/pressure/2014_080_04_22_22_
- delete mode 100644 data/pressure/2014_080_04_22_23_
- delete mode 100644 data/pressure/2014_080_04_22_24_
- delete mode 100644 data/pressure/2014_080_04_22_25_
- delete mode 100644 data/pressure/2014_080_04_22_26_
- delete mode 100644 data/pressure/2014_080_04_22_27_
- delete mode 100644 data/pressure/2014_080_04_32_32_
- delete mode 100644 data/pressure/2014_080_04_32_33_
- delete mode 100644 data/pressure/2014_080_04_32_34_
- delete mode 100644 data/pressure/2014_080_04_32_35_
- delete mode 100644 data/pressure/2014_080_04_32_36_
- delete mode 100644 data/pressure/2014_080_04_32_37_
- delete mode 100644 data/pressure/2014_080_04_32_38_
- delete mode 100644 data/pressure/2014_080_04_32_39_
- delete mode 100644 data/pressure/2014_080_04_32_40_
- delete mode 100644 data/pressure/2014_080_04_32_41_
- delete mode 100644 data/pressure/2014_080_04_32_42_
- delete mode 100644 data/pressure/2014_080_04_32_43_
- delete mode 100644 data/pressure/2014_080_04_32_44_
- delete mode 100644 data/pressure/2014_080_04_32_45_
- delete mode 100644 data/pressure/2014_080_04_32_46_
- delete mode 100644 data/pressure/2014_080_04_32_47_
- delete mode 100644 data/pressure/2014_080_04_32_48_
- delete mode 100644 data/pressure/2014_080_04_32_49_
- delete mode 100644 data/pressure/2014_080_04_32_55_
- delete mode 100644 data/pressure/2014_080_04_32_56_
- delete mode 100644 data/pressure/2014_080_04_32_57_
- delete mode 100644 data/pressure/2014_080_04_32_58_
- delete mode 100644 data/pressure/2014_080_04_32_59_
- delete mode 100644 data/pressure/2014_080_04_33_01_
- delete mode 100644 data/pressure/2014_080_04_33_02_
- delete mode 100644 data/pressure/2014_080_04_34_09_
- delete mode 100644 data/pressure/2014_080_04_34_16_
- delete mode 100644 data/pressure/2014_080_04_34_17_
- delete mode 100644 data/pressure/2014_080_04_34_18_
- delete mode 100644 data/pressure/2014_080_04_34_19_
- delete mode 100644 data/pressure/2014_080_04_34_20_
- delete mode 100644 data/pressure/2014_080_04_34_21_
- delete mode 100644 data/pressure/2014_080_04_34_22_
- delete mode 100644 data/pressure/2014_080_04_34_23_
- delete mode 100644 data/pressure/2014_080_04_34_24_
- delete mode 100644 data/pressure/2014_080_04_34_25_
- delete mode 100644 data/pressure/2014_080_04_34_26_
- delete mode 100644 data/pressure/2014_080_04_34_27_
- delete mode 100644 data/pressure/2014_080_04_34_28_
- delete mode 100644 data/pressure/2014_080_04_34_29_
- delete mode 100644 data/pressure/2014_080_04_34_30_
- delete mode 100644 data/pressure/2014_080_04_34_31_
- delete mode 100644 data/pressure/2014_080_04_34_32_
- delete mode 100644 data/pressure/2014_080_04_34_33_
- delete mode 100644 data/pressure/2014_080_04_34_34_
- delete mode 100644 data/pressure/2014_080_04_34_35_
- delete mode 100644 data/pressure/2014_080_04_34_36_
- delete mode 100644 data/pressure/2014_080_04_34_37_
- delete mode 100644 data/pressure/2014_080_04_34_39_
- delete mode 100644 data/pressure/2014_080_04_36_53_
- delete mode 100644 data/pressure/2014_080_04_46_25_
- rename data/{pressure_data => pressure}/collected_data.txt (100%)
- rename data/{rain_data => rain}/data_collected.txt (100%)
- delete mode 100644 data/themperature/received.txtla mai
- rename data/{wind_data => wind}/collected_data.txt (100%)
- rename data/pressure/1395370401.19 => typescript (100%)
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo git commit -am "mckupdate"[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kpush origin master
-Username for 'https://github.com': 6 ewb-ucf	
-Password for 'https://ewb-ucf@github.com': 
-To https://github.com/ewb-ucf/weatherStationProject.git
- ! [rejected]        master -> master (fetch first)
-error: failed to push some refs to 'https://github.com/ewb-ucf/weatherStationProject.git'
-hint: Updates were rejected because the remote contains work that you do
-hint: not have locally. This is usually caused by another repository pushing
-hint: to the same ref. You may want to first integrate the remote changes
-hint: (e.g., 'git pull ...') before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ ls
-[0m[01;34mdata[0m  [01;34mscripts[0m  [01;34mtest_data[0m  TODO.txt  typescript  [01;34mweatherstation[0m
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ cd data/
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProject/dataadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject/data$ l
-[0m[01;34mphotoresistor[0m/  [01;34mpressure[0m/  [01;34mrain[0m/  [01;34mtemperature[0m/  [01;34mwind[0m/
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProject/dataadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject/data$ s[Kls
-[0m[01;34mphotoresistor[0m  [01;34mpressure[0m  [01;34mrain[0m  [01;34mtemperature[0m  [01;34mwind[0m
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProject/dataadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject/data$ sudo git pull
-remote: Counting objects: 4, done.[K
-remote: Compressing objects:  33% (1/3)   [Kremote: Compressing objects:  66% (2/3)   [Kremote: Compressing objects: 100% (3/3)   [Kremote: Compressing objects: 100% (3/3), done.[K
-remote: Total 4 (delta 1), reused 4 (delta 1)[K
-Unpacking objects:  25% (1/4)   Unpacking objects:  50% (2/4)   Unpacking objects:  75% (3/4)   Unpacking objects: 100% (4/4)   Unpacking objects: 100% (4/4), done.
-From https://github.com/ewb-ucf/weatherStationProject
-   fd5e897..de4f30b  master     -> origin/master
-[?1049h[?1h=[2;1H▽[6n[1;1H  [1;1H[1;47r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[47;1H"/var/www/ewb_django_weatherstation/weatherStationProject/.git/MERGE_MSG" 7L, 301C[>c[1;1H[33mMerge branch 'master' of https://github.com/ewb-uc[mf/weatherStationProject
-
-[34m# Please enter a commit message to explain why this merge is necessary,
-# especially if it merges an updated upstream into a topic branch.
-#
-# Lines starting with '#' will be ignored, and an empty message aborts
-# the commit.[m
-[1m[34m~                                                                                                                                                                                       [9;1H~                                                                                                                                                                                       [10;1H~                                                                                                                                                                                       [11;1H~                                                                                                                                                                                       [12;1H~                                                                                                                                                                                       [13;1H~                                                                                                                                                                                       [14;1H~                                                                                                                                                                                       [15;1H~                                                                                                                                                                                       [16;1H~                                                                                                                                                                                       [17;1H~                                                                                                                                                                                       [18;1H~                                                                                                                                                                                       [19;1H~                                                                                                                                                                                       [20;1H~                                                                                                                                                                                       [21;1H~                                                                                                                                                                                       [22;1H~                                                                                                                                                                                       [23;1H~                                                                                                                                                                                       [24;1H~                                                                                                                                                                                       [25;1H~                                                                                                                                                                                       [26;1H~                                                                                                                                                                                       [27;1H~                                                                                                                                                                                       [28;1H~                                                                                                                                                                                       [29;1H~                                                                                                                                                                                       [30;1H~                                                                                                                                                                                       [31;1H~                                                                                                                                                                                       [32;1H~                                                                                                                                                                                       [33;1H~                                                                                                                                                                                       [34;1H~                                                                                                                                                                                       [35;1H~                                                                                                                                                                                       [36;1H~                                                                                                                                                                                       [37;1H~                                                                                                                                                                                       [38;1H~                                                                                                                                                                                       [39;1H~                                                                                                                                                                                       [40;1H~                                                                                                                                                                                       [41;1H~                                                                                                                                                                                       [42;1H~                                                                                                                                                                                       [43;1H~                                                                                                                                                                                       [44;1H~                                                                                                                                                                                       [45;1H~                                                                                                                                                                                       [46;1H~                                                                                                                                                                                       [m[47;167H1,1[11CAll[1;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[47;1H[K[47;1H:[?12l[?25hw[?25l[?12l[?25hq[?25l[?12l[?25h[?25l".git/MERGE_MSG" 7L, 301C written
-[?1l>[?12l[?25h[?1049lMerge made by the 'recursive' strategy.
- tempfile.txt  | 0
- temporary.txt | 0
- 2 files changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 tempfile.txt
- create mode 100644 temporary.txt
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProject/dataadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject/data$ sudo git pullls[K[Kcd data/ls[Ksudo git push origin mastercommit -am "mckupdate"add *[K
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProject/dataadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject/data$ sudo git add *[1Ppullls[K[Kcd data/ls[Ksudo git push origin mastercommit -am "mckupdate"
-[master d444222] mckupdate
- 1 file changed, 159 insertions(+)
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProject/dataadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject/data$ sudo git commit -am "mckupdate"add *[K[1Ppullls[K[Kcd data/ls[Ksudo git push origin master
-Username for 'https://github.com': ewbucf-    -ucf	
-Password for 'https://ewb-ucf@github.com': 
-Counting objects: 11, done.
-Delta compression using up to 2 threads.
-Compressing objects:  12% (1/8)   Compressing objects:  25% (2/8)   Compressing objects:  37% (3/8)   Compressing objects:  50% (4/8)   Compressing objects:  62% (5/8)   Compressing objects:  75% (6/8)   Compressing objects:  87% (7/8)   Compressing objects: 100% (8/8)   Compressing objects: 100% (8/8), done.
-Writing objects:  12% (1/8)   Writing objects:  25% (2/8)   Writing objects:  37% (3/8)   Writing objects:  50% (4/8)   Writing objects:  62% (5/8)   Writing objects:  75% (6/8)   Writing objects:  87% (7/8)   Writing objects: 100% (8/8)   Writing objects: 100% (8/8), 3.04 KiB | 0 bytes/s, done.
-Total 8 (delta 3), reused 0 (delta 0)
-To https://github.com/ewb-ucf/weatherStationProject.git
-   de4f30b..d444222  master -> master
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProject/dataadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject/data$ ls
-[0m[01;34mphotoresistor[0m  [01;34mpressure[0m  [01;34mrain[0m  [01;34mtemperature[0m  [01;34mwind[0m
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProject/dataadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject/data$ cd ../[K[K[K[K[K[Kcd ../
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ ls
-[0m[01;34mdata[0m  [01;34mscripts[0m  tempfile.txt  temporary.txt  [01;34mtest_data[0m  TODO.txt  typescript  [01;34mweatherstation[0m
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo git add *
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ git c[K[K[K[K[Ksudo git commin[Kt -am "mckinnley making updates"
-[master 1c5758f] mckinnley making updates
- 1 file changed, 12 insertions(+), 1 deletion(-)
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo i[Kgit ps[Kush origin master 
-Username for 'https://github.com': ewb-ucf
-Password for 'https://ewb-ucf@github.com': 
-Counting objects: 5, done.
-Delta compression using up to 2 threads.
-Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
-Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 767 bytes | 0 bytes/s, done.
-Total 3 (delta 2), reused 0 (delta 0)
-To https://github.com/ewb-ucf/weatherStationProject.git
-   d444222..1c5758f  master -> master
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ ls 
-[0m[01;34mdata[0m  [01;34mscripts[0m  tempfile.txt  temporary.txt  [01;34mtest_data[0m  TODO.txt  typescript  [01;34mweatherstation[0m
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ clea
-rlNo command 'clea' found, did you mean:
- Command 'clear' from package 'ncurses-bin' (main)
- Command 'clex' from package 'clex' (universe)
-clea: command not found
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ rls
-No command 'rls' found, but there are 18 similar ones
-rls: command not found
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ clear
-[H[2J]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ ls
-[0m[01;34mdata[0m  [01;34mscripts[0m  tempfile.txt  temporary.txt  [01;34mtest_data[0m  TODO.txt  typescript  [01;34mweatherstation[0m
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ cd data/
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProject/dataadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject/data$ ls
-[0m[01;34mphotoresistor[0m  [01;34mpressure[0m  [01;34mrain[0m  [01;34mtemperature[0m  [01;34mwind[0m
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProject/dataadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject/data$ cd ../
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ ls
-[0m[01;34mdata[0m  [01;34mscripts[0m  tempfile.txt  temporary.txt  [01;34mtest_data[0m  TODO.txt  typescript  [01;34mweatherstation[0m
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo git add *[K
-Nothing specified, nothing added.
-Maybe you wanted to say 'git add .'?
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo git add data/photoresistor/
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo git add data/photoresistor/[Kls[Kcd ../[4Plscd data/ls[Kclear[2Prlsclea[1Pls [25@sudo git push origin master[Ccommit -am "mckinnley making updates"
-[master 7b04cbd] mckinnley making updates
- 1 file changed, 37 insertions(+), 1 deletion(-)
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ sudo git commit -am "mckinnley making updates"[14Padd data/photoresistor/[Kls[Kcd ../[4Plscd data/ls[Kclear[2Prlsclea[1Pls [25@sudo git push origin master[C
-Username for 'https://github.com': ewb-ucf
-Password for 'https://ewb-ucf@github.com': 
-Counting objects: 5, done.
-Delta compression using up to 2 threads.
-Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
-Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 982 bytes | 0 bytes/s, done.
-Total 3 (delta 2), reused 0 (delta 0)
-To https://github.com/ewb-ucf/weatherStationProject.git
-   1c5758f..7b04cbd  master -> master
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ ls
-[0m[01;34mdata[0m  [01;34mscripts[0m  tempfile.txt  temporary.txt  [01;34mtest_data[0m  TODO.txt  typescript  [01;34mweatherstation[0m
-]0;admin48@admin48-X401A1: /var/www/ewb_django_weatherstation/weatherStationProjectadmin48@admin48-X401A1:/var/www/ewb_django_weatherstation/weatherStationProject$ clear
-[H[2
