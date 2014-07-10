@@ -3,52 +3,94 @@
                  process
 """
 
-__author__="Sebastien Bennoit"
+__author__="Sebastien Benoit"
 
-import settings,datetime,time,os
-from Adafruit_BMP085 import BMP085
+import datetime,time,os,logging
+from lib.Adafruit_BMP085 import BMP085
+from lib import settings
+
+#Set the log level here (INFO, DEBUG, etc)
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+#Create a file handler
+handler = logging.FileHandler("log/run_pressure_sensor.log")
+handler.setLevel(logging.INFO)
+
+logger.addHandler(handler)
+
 
 last_collection_time = None
 
+def test_pressure_sensor():
+    """ 
+    This function test and logs all the sensors of the weatherstation to make
+    sure that they are properly initialized, and collecting the correct set of data.
+    In case of an error, an error message specifying the defective sensor,and 
+    explaining the type of error and the steps needed to correct said error will
+    be displayed.
+    """
+    channel = 0x77
+    sensor = BMP085(0x77)
 
-def collect_to_file():
+    logger.info("...testing pressure sensor")
+
+    try: 
+        #WAIT!!! your hPaC initialization need to be put here :)
+        pressure = sensor.readPressure()
+        logger.debug("**Pressure sensor activated.")
+        return sensor
+
+    except:
+        logger.error("Pressure sensor failed to initialize.")
+        logger.error("Please check your connection and try again.")
+        return False
+
+def collect_to_file(sensor):
     """
     This function defines the sensor, sets it's channel, the collection
     frequency, and the output file location. Once this is done, the date and
     data are respectively saved as strings.
     """
-    channel = 0x77
-    sensor = BMP085(channel)
     pressure_settings = settings.SENSORS.get("PRESSURE")
 
-    frequency = pressure_settings[1][1]
+    frequency =float( pressure_settings[1][1])
     period =float( pressure_settings[2][1])
-    write_file = pressure_settings[3][1]
     last_collection_time = pressure_settings[4][1]
 
 
- 
-    
     while 1: 
-        if ( (datetime.datetime.utcnow()-last_collection_time) >= datetime.timedelta(seconds=(float(frequency))) ):
-            s = []
-            count = 0 
-            print "collecting"
+        s = []
+        count = 0 
+        logger.info("collecting")
     
-            while(count <= period):
-                s.append(os.path.join(time.strftime("%Y_%j_%H_%M_%S_"),str(sensor.readPressure())))
-                time.sleep(1)
-                count = count + 1
-                print count
-    
-            with open(os.path.join(write_file,time.strftime("%Y_%j_%H_%M_%S_")),'w+') as file:
-                file.writelines("%s\n" % item for item in s)
-            file.close()    
-            print "done counting"
-            last_collection_time = datetime.datetime.utcnow()
-            print last_collection_time
+        while(count <= period):
+            s.append(os.path.join(time.strftime("%Y_%j_%H_%M_%S_"),str(sensor.readPressure())))
+            time.sleep(1)
+            count = count + 1
+            print count
 
+        write_to_file(s)
+        logger.info("done counting")
+        last_collection_time = datetime.datetime.utcnow()
+        logger.info( last_collection_time)
+        time.sleep(frequency)
+ 
     return True
+
+
+def write_to_file(s):
+     
+    logger.info("Writing to file.....")
+    pressure_settings = settings.SENSORS.get("PRESSURE")
+    write_file = pressure_settings[3][1]
+     
+    with open(os.path.join(write_file,time.strftime("%Y_%j_%H_%M_%S_")),'w+') as file:
+        file.writelines("%s\n" % item for item in s)
+        file.close()
+ 
+    return True
+
 
 def main():
     """
@@ -57,7 +99,12 @@ def main():
     """
 
     #Collect data every 'freq' for 'period'
-    collect_to_file()
+    b = test_pressure_sensor()
+    if b:
+        collect_to_file(b)
+    else:
+       logger.error("something is wrong")
 
 if __name__=="__main__":
-    main()
+   main()
+

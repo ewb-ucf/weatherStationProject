@@ -11,9 +11,12 @@ Description  : The purpose of this file is to initialize all the sensors, test a
 __author__ ="Sebastien Benoit"
 __date__ = "06/01/2014"
 
-
-from Adafruit_BMP085 import BMP085   
+# need to import the minirun dir to use the sensors
+#---------------------------------
+#---------------
+from miniruns.lib.Adafruit_BMP085 import BMP085 # give an error
 import logging, os
+from miniruns import run_* 
 
 #Set the log level here (INFO, DEBUG, etc)
 logger = logging.getLogger(__name__)
@@ -32,7 +35,7 @@ def initialize_sensors():
     This function initializes and tests all sensors of the weatherstation.
     """
 
-    pass = True
+    passed = True
 
     logger.info("Initializing and testing sensors...")
     
@@ -40,13 +43,15 @@ def initialize_sensors():
         logger.info("pressure_temperature sensor test successfully")
     else:
         logger.error("pressure_temperature sensor test not successful")
-   
-    if pass == True:
+  
+    #add the rest of the sensors
+ 
+    if passed == True:
         logger.info("ALL PRELIM SENSOR TESTS PASSED") 
-    if pass == False:
+    if passed == False:
         logger.error("NOT ALL SENSOR TESTS PASSED")
     
-    return pass
+    return passed
     
 
 #------------------------------------------------------------------------------
@@ -112,8 +117,12 @@ def main():
 
     logger.info("STARTING TO INITIALIZE AND RUN TESTS")
     
-    b = initialize_pressure_temperature_sensor()
-    test_pressure_temperature_sensor(b)
+
+    if initialize_sensors():
+       #start each one individually
+        
+#    b = initialize_pressure_temperature_sensor()
+ #   test_pressure_temperature_sensor(b)
 
 
 if __name__=="__main__":

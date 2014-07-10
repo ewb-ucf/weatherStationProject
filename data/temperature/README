@@ -1,0 +1,4 @@
+This is the storage location for the data aquired via the thermometer
+(Temperature sensor; Adafruit,BMP180)
+
+Format:[year_day(1-365)_hour_minute_seconds]

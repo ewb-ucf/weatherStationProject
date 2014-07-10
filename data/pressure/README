@@ -1,0 +1,11 @@
+---------------------------------------------
+Description: Storage location for barometer data.
+
+Author: Pressure sensor; Adafruit BMP180.
+
+
+
+
+This is the storage location for the data aquired from the barometer.
+(Pressure sensor; Adafruit, BMP180)
+Format:[year_day(1-365)_hours_minutes_seconds]

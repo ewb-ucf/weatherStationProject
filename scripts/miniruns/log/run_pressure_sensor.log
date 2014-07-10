@@ -1,0 +1,116 @@
+INFO:__main__:...testing pressure sensor
+INFO:__main__:...testing pressure sensor
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-06-21 20:50:04.882774
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-06-21 20:50:56.525644
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-06-21 20:51:48.178857
+INFO:__main__:collecting
+INFO:__main__:...testing pressure sensor
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-06-21 21:22:24.581009
+INFO:__main__:...testing pressure sensor
+INFO:__main__:collecting
+INFO:__main__:...testing pressure sensor
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-06-21 21:41:55.675219
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-06-21 21:42:47.325879
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-06-21 21:43:38.981716
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-06-21 21:44:30.618481
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-06-21 21:45:22.254839
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-06-21 21:46:13.881941
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-06-21 21:47:05.516083
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-06-21 21:47:57.136483
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-06-21 21:48:48.781679
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-06-21 21:49:40.407809
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-06-21 21:50:32.036008
+INFO:__main__:collecting
+INFO:__main__:...testing pressure sensor
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-07-01 03:33:08.423311
+INFO:__main__:...testing pressure sensor
+ERROR:__main__:Pressure sensor failed to initialize.
+ERROR:__main__:Please check your connection and try again.
+ERROR:__main__:something is wrong
+INFO:__main__:...testing pressure sensor
+INFO:__main__:collecting
+INFO:__main__:...testing pressure sensor
+INFO:__main__:collecting
+INFO:__main__:...testing pressure sensor
+INFO:__main__:collecting
+INFO:__main__:...testing pressure sensor
+INFO:__main__:collecting
+INFO:__main__:...testing pressure sensor
+INFO:__main__:collecting
+INFO:__main__:...testing pressure sensor
+INFO:__main__:collecting
+INFO:__main__:...testing pressure sensor
+INFO:__main__:collecting
+INFO:__main__:...testing pressure sensor
+INFO:__main__:collecting
+INFO:__main__:Writing to file.....
+INFO:__main__:done counting
+INFO:__main__:2014-07-01 04:19:41.254521
+INFO:__main__:...testing pressure sensor
+INFO:__main__:collecting
+INFO:__main__:...testing pressure sensor
+INFO:__main__:collecting
+...testing pressure sensor
+INFO:__main__:...testing pressure sensor
+collecting
+INFO:__main__:collecting
+...testing pressure sensor
+collecting
+...testing pressure sensor
+collecting
+Writing to file.....
+done counting
+2014-07-01 05:57:00.155884
+collecting
+...testing pressure sensor
+collecting
+...testing pressure sensor
+collecting
